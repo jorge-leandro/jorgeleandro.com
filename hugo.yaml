@@ -10,7 +10,7 @@ services:
   disqus:
     shortname: jorgeleandro
   googleAnalytics:
-    ID: G-
+    ID: G-QZEVZE02CT
 
 # import hextra as module
 module:
