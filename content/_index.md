@@ -1,17 +1,8 @@
 ---
-title: My Site
-toc: false
+title: JorgeLeandro's Blog
 ---
 
-This is the landing page.
+## 2025 - October
 
-## Explore
+- [Teste](/2025/10/24/teste/)
 
-{{< cards >}}
-  {{< card link="docs" title="Docs" icon="book-open" >}}
-  {{< card link="about" title="About" icon="user" >}}
-{{< /cards >}}
-
-## Documentation
-
-For more information, visit [Hextra](https://imfing.github.io/hextra).
