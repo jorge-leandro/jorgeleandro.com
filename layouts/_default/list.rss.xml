@@ -3,12 +3,12 @@
      xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>{{ .Site.Title }}</title>
-    <link>{{ .Site.BaseURL | absURL }}</link>
+    <link>{{ .Site.BaseURL }}</link>
     <description>{{ .Site.Params.description }}</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>{{ .Site.LanguageCode | default "en" }}</language>
     <lastBuildDate>{{ now.Format "Mon, 02 Jan 2006 15:04:05 GMT" }}</lastBuildDate>
-    <atom:link href="{{ "index.xml" | absURL }}" rel="self" type="application/rss+xml"/>
+    <atom:link href="{{ .Permalink }}" rel="self" type="application/rss+xml"/>
     {{ range first 20 .Site.RegularPages.ByDate.Reverse }}
       <item>
         <title>{{ .Title | html }}</title>
