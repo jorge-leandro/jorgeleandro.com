@@ -2,9 +2,70 @@
   text-align: justify;
 }
 
-/* Garante que o Disqus seja legível no modo escuro */
-html[class~="dark"] #disqus_thread {
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  padding: 1rem;
+/*
+ * CSS Customizado para os Badges de Tag (COM SUPORTE A LIGHT/DARK MODE)
+ */
+
+a:has(> code) {
+  /* Remove o sublinhado e a cor azul do link. */
+  text-decoration: none !important;
+  color: inherit !important;
+  border-bottom: none !important;
+
+  /* Permite o efeito de "levantar" (translateY) */
+  display: inline-block;
+
+  /* Animação de "levantar" */
+  transition: transform 0.2s ease-in-out;
+}
+
+/* 2. Efeito de "levantar" no hover */
+a:has(> code):hover {
+  /* Move o badge 2px para cima */
+  transform: translateY(-0.125rem);
+}
+
+/* 3. Estilo do badge <code> INATIVO */
+a > code {
+  /* Estado padrão (cores do tema para code) */
+  background-color: black;
+  color: var(--code-color);
+  
+  /* Estilos visuais */
+  border-radius: 0.375rem;
+  padding: 0.125rem 0.5rem;
+  white-space: nowrap;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  border: none;
+  font-size: 0.875em;
+}
+
+/* 4. Estilo de HOVER para badges INATIVOS */
+a:hover > code {
+  /* Estado de hover (cores primárias do tema) */
+  background-color: var(--primary-color);
+  color: var(--primary-bg-contrast);
+}
+
+/* 5. Estilo do badge <code> ATIVO */
+/* * Seleciona <code> que é FILHO DIRETO de um <p>.
+ * Isso SÓ vai pegar o badge ativo (pois os inativos
+ * são filhos de <a>, não de <p>).
+ */
+p > code {
+  /* Estado Ativo (mesmo estilo do hover) */
+  background-color: var(--primary-color);
+  color: var(--primary-bg-contrast);
+
+  font-weight: 600;
+
+  /* Estilos visuais (precisam ser repetidos) */
+  border-radius: 0.375rem;
+  padding: 0.125rem 0.5rem;
+  white-space: nowrap;
+  border: none;
+  font-size: 0.875em;
+  
+  /* Faz ele parecer "parado" como os outros */
+  display: inline-block;
 }
