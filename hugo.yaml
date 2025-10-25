@@ -2,6 +2,12 @@
 title: JorgeLeandro.com
 languageCode: "pt-BR"
 baseURL: "https://www.jorgeleandro.com/"
+defaultContentLanguage: pt-BR
+languages:
+  pt-BR:
+    languageName: Português (Brasil)
+    weight: 1
+
 
 outputs:
   home: [HTML, RSS]
