@@ -4,7 +4,7 @@ comments: False
 layout: single
 ---
 
-**Tags:** `Todas` [`teste1`](/tags/teste1) [`teste2`](/tags/teste2) [`teste3`](/tags/teste3)
+**Tags:** [`Todas`](/) `teste1` [`teste2`](/tags/teste2) [`teste3`](/tags/teste3)
 
 ## 2025 - Outubro
 
