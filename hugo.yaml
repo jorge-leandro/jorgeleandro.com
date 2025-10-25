@@ -4,11 +4,9 @@ languageCode: "pt-BR"
 baseURL: "https://www.jorgeleandro.com/"
 
 outputs:
-  home: [HTML,RSS]
+  home: [HTML, RSS]
 
 services:
-  disqus:
-    shortname: jorgeleandro
   googleAnalytics:
     ID: G-QZEVZE02CT
 
@@ -57,6 +55,14 @@ menu:
         icon: instagram
 
 params:
+  comments:
+    enable: true
+    type: giscus
+    giscus:
+      repo: jorge-leandro/jorgeleandro.com
+      repoID: R_kgDOQIXiEw
+      category: General
+      categoryID: DIC_kwDOQIXiE84CxD0q
   navbar:
     displayTitle: true
     displayLogo: false
