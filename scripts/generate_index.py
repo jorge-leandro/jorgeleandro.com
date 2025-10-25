@@ -3,12 +3,12 @@
 import os
 import sys
 import yaml
-import calendar
 import itertools
-from datetime import datetime
 from dateutil.parser import (
     parse as parse_date,
 )
+
+import shutil
 
 
 def escape_markdown(text: str) -> str:
@@ -36,53 +36,41 @@ def write_index_file(
     ):
         grouped[(year, month)] = list(group)
 
-
     output_dir = os.path.dirname(filepath)
     if output_dir:  # Evita erro se o caminho for "" ou "."
         os.makedirs(output_dir, exist_ok=True)
-
 
     try:
         with open(filepath, "w", encoding="utf-8") as f:
             f.write("---\n")
             f.write(f'title: "{title}"\n')
-            f.write(f'comments: {comments_enabled}\n')
+            f.write(f"comments: {comments_enabled}\n")
             f.write("layout: single\n")
             f.write("---\n\n")
-
 
             if all_tags_list:
                 sorted_tags = sorted(list(all_tags_list))
                 tag_links = []
-                
 
                 if active_tag is None:
-
                     tag_links.append("`Todas`")
                 else:
-
                     tag_links.append("[`Todas`](/)")
-
 
                 for t in sorted_tags:
                     if t == active_tag:
-
                         tag_links.append(f"`{t}`")
                     else:
-
                         tag_links.append(f"[`{t}`](/tags/{t})")
 
-
                 tag_line = " ".join(tag_links)
-                f.write(f"**Tags:** {tag_line}\n\n")
-
+                f.write(f"{tag_line}\n\n")
 
             if not grouped:
                 f.write("Nenhum post encontrado.\n\n")
 
-
             for year, month in grouped.keys():
-                month_name = months_pt[month]  # Usa o calendar.month_name
+                month_name = months_pt[month]
                 f.write(f"## {year} - {month_name}\n\n")
 
                 for post in grouped[(year, month)]:
@@ -130,11 +118,9 @@ def main():
                         front = yaml.safe_load("".join(fm_lines))
 
                         if front:
-
                             tags = front.get("tags", [])
                             if isinstance(tags, list):
                                 all_tags.update(tags)
-
 
                             if "title" in front and "date" in front:
                                 try:
@@ -150,7 +136,7 @@ def main():
                                             "title": front["title"],
                                             "url": url,
                                             "date": date_obj,
-                                            "tags": tags, 
+                                            "tags": tags,
                                         }
                                     )
 
@@ -171,24 +157,42 @@ def main():
     # Configuração dos meses em Português
     months_pt = [
         "",
-        "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
-        "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro",
+        "Janeiro",
+        "Fevereiro",
+        "Março",
+        "Abril",
+        "Maio",
+        "Junho",
+        "Julho",
+        "Agosto",
+        "Setembro",
+        "Outubro",
+        "Novembro",
+        "Dezembro",
     ]
-
-
 
     print("Gerando página principal...")
     write_index_file(
         filepath="content/_index.md",
-        title="Blog do Jorge Leandro",
+        title="Blog",
         comments_enabled=False,
         entries_list=entries,
         all_tags_list=all_tags,
         months_pt=months_pt,
         active_tag=None,
     )
+    tags_base_dir = "content/tags"
 
-
+    # Limpa o diretório de tags antigo antes de gerar os novos
+    print(f"\nLimpando diretório de tags antigo: {tags_base_dir}")
+    if os.path.exists(tags_base_dir):
+        try:
+            shutil.rmtree(tags_base_dir)
+            print("Diretório de tags antigo removido com sucesso.")
+        except OSError as e:
+            print(f"Erro ao remover {tags_base_dir}: {e}", file=sys.stderr)
+    else:
+        print("Diretório de tags não encontrado, nada para limpar.")
     print("Gerando páginas de tags...")
     for tag in all_tags:
         tag_entries = [entry for entry in entries if tag in entry["tags"]]
@@ -197,17 +201,16 @@ def main():
 
         write_index_file(
             filepath=tag_filepath,
-            title="Blog do Jorge Leandro",
+            title="Blog",
             comments_enabled=False,
             entries_list=tag_entries,
             all_tags_list=all_tags,
             months_pt=months_pt,
             active_tag=tag,
         )
-    
+
     print("\nProcesso concluído.")
 
 
 if __name__ == "__main__":
     main()
-

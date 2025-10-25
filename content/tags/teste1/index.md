@@ -1,10 +1,10 @@
 ---
-title: "Blog do Jorge Leandro"
+title: "Blog"
 comments: False
 layout: single
 ---
 
-**Tags:** [`Todas`](/) `teste1` [`teste2`](/tags/teste2) [`teste3`](/tags/teste3)
+[`Todas`](/) `teste1` [`teste2`](/tags/teste2) [`teste3`](/tags/teste3)
 
 ## 2025 - Outubro
 

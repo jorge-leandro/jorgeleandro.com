@@ -10,7 +10,6 @@ a:has(> code) {
   /* Remove o sublinhado e a cor azul do link. */
   text-decoration: none !important;
   color: inherit !important;
-  border-bottom: none !important;
 
   /* Permite o efeito de "levantar" (translateY) */
   display: inline-block;
@@ -25,27 +24,6 @@ a:has(> code):hover {
   transform: translateY(-0.125rem);
 }
 
-/* 3. Estilo do badge <code> INATIVO */
-a > code {
-  /* Estado padrão (cores do tema para code) */
-  background-color: black;
-  color: var(--code-color);
-  
-  /* Estilos visuais */
-  border-radius: 0.375rem;
-  padding: 0.125rem 0.5rem;
-  white-space: nowrap;
-  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-  border: none;
-  font-size: 0.875em;
-}
-
-/* 4. Estilo de HOVER para badges INATIVOS */
-a:hover > code {
-  /* Estado de hover (cores primárias do tema) */
-  background-color: var(--primary-color);
-  color: var(--primary-bg-contrast);
-}
 
 /* 5. Estilo do badge <code> ATIVO */
 /* * Seleciona <code> que é FILHO DIRETO de um <p>.
@@ -53,19 +31,7 @@ a:hover > code {
  * são filhos de <a>, não de <p>).
  */
 p > code {
-  /* Estado Ativo (mesmo estilo do hover) */
-  background-color: var(--primary-color);
-  color: var(--primary-bg-contrast);
-
   font-weight: 600;
-
-  /* Estilos visuais (precisam ser repetidos) */
-  border-radius: 0.375rem;
-  padding: 0.125rem 0.5rem;
-  white-space: nowrap;
-  border: none;
-  font-size: 0.875em;
-  
-  /* Faz ele parecer "parado" como os outros */
-  display: inline-block;
+  background-color: #3B82F6 !important;
+  color: #FFFFFF !important;
 }
