@@ -42,6 +42,10 @@ menu:
       url: "/index.xml"
       params:
         icon: rss
+    - name: Theme Toggle
+      params:
+        type: theme-toggle
+      weight: 5
   sidebar:
     - name: GitHub
       weight: 1
