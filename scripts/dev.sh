@@ -37,7 +37,6 @@ date: $(date +%Y-%m-%dT%H:%M:%S%z)
 draft: false
 description: "Descrição do post aqui"
 tags: []
-categories: []
 ---
 
 Conteúdo do post aqui...
