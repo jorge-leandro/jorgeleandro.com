@@ -9,5 +9,4 @@ layout: single
 ## 2025 - Outubro
 
 - [MQTT na Prática: Monitorando um Inversor Solar com Python](/2025/10/27/mqtt-na-pr-tica--monitorando-um-inversor-solar-com-python/)
-- [MQTT na Prática: Monitorando um Inversor Solar com Python](/2025/10/27/protocolo-mqtt/)
 
