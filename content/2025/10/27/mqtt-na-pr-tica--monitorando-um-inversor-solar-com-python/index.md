@@ -125,6 +125,7 @@ No Terminal 1, execute o publicador:
 python publisher.py
 ```
 
+Ele começará a enviar dados.
 No Terminal 2, execute o inscrito:
 
 ```python
@@ -133,10 +134,8 @@ python subscriber.py
 
 Ele ficará aguardando mensagens.
 
-Ele começará a enviar dados.
 
-Observe o Terminal 2. Você verá os dados do inversor chegando em tempo real.
-
+Observe o Terminal 2. Você verá os dados do inversor chegando em tempo real:
 
 ![Execução exemplo MQTT](https://bucket.jorgeleandro.com/blog/mqtt-exec.gif)
 
