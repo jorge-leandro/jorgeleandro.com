@@ -27,13 +27,13 @@ markup:
 
 menu:
   main:
-    - name: About
+    - name: Sobre
       pageRef: /about
       weight: 1
-    - name: Contact ↗
-      url: "mailto:js.leandro26@gmail.com"
+    - name: Contato ↗
+      url: "https://github.com/jorge-leandro"
       weight: 2
-    - name: Search
+    - name: Pesquisa
       weight: 3
       params:
         type: search
@@ -42,7 +42,7 @@ menu:
       url: "/index.xml"
       params:
         icon: rss
-    - name: Theme Toggle
+    - name: Tema
       params:
         type: theme-toggle
       weight: 5

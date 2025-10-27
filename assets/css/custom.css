@@ -40,3 +40,13 @@ html.dark a.tag.active {
   background-color: #3b82f6 !important;
   color: #ffffff !important;
 }
+
+html.dark .content img {
+    /* O filtro inverte as cores da imagem (preto vira branco), 
+      essencial para PNGs transparentes ou SVGs que usam linhas pretas.
+    */
+    filter: invert(100%) hue-rotate(180deg);
+    
+    /* Opcional: Transição suave ao alternar entre os modos */
+    transition: filter 0.3s ease-in-out;
+}
