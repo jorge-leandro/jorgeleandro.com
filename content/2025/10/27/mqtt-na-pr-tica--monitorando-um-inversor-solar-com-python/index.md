@@ -1,7 +1,7 @@
 ---
 title: "MQTT na Prática: Monitorando um Inversor Solar com Python"
 date: 2025-10-27T07:29:14-0300
-tags: ["MQTT", "IoT", "Python", "Pub/Sub", "Protocolos", "Tutorial"]
+tags: ["mqtt", "iot", "python", "pubsub", "protocolos", "tutorial"]
 ---
 
 O protocolo MQTT (Message Queuing Telemetry Transport), surgiu nos anos 90 com o objetivo de monitorar oleodutos via satélite. Essa demanda tinha como requisito **baixo consumo** de **banda** e de **bateria**.

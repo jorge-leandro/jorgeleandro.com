@@ -4,7 +4,7 @@ comments: False
 layout: single
 ---
 
-<a href="/" class="tag active">Todas</a> <a href="/tags/IoT" class="tag">IoT</a> <a href="/tags/MQTT" class="tag">MQTT</a> <a href="/tags/Protocolos" class="tag">Protocolos</a> <a href="/tags/Pub/Sub" class="tag">Pub/Sub</a> <a href="/tags/Python" class="tag">Python</a> <a href="/tags/Tutorial" class="tag">Tutorial</a>
+<a href="/" class="tag active">Todas</a> <a href="/tags/iot" class="tag">iot</a> <a href="/tags/mqtt" class="tag">mqtt</a> <a href="/tags/protocolos" class="tag">protocolos</a> <a href="/tags/pubsub" class="tag">pubsub</a> <a href="/tags/python" class="tag">python</a> <a href="/tags/tutorial" class="tag">tutorial</a>
 
 ## 2025 - Outubro
 
