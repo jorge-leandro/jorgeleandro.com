@@ -53,15 +53,16 @@ def write_index_file(
                 tag_links = []
 
                 if active_tag is None:
-                    tag_links.append("`Todas`")
+                    tag_links.append('<a href="/" class="tag active">Todas</a>')
                 else:
-                    tag_links.append("[`Todas`](/)")
+                    tag_links.append('<a href="/" class="tag">Todas</a>')
 
                 for t in sorted_tags:
                     if t == active_tag:
-                        tag_links.append(f"`{t}`")
+                        tag_links.append(f'<a href="/tags/{t}" class="tag active">{t}</a>')
                     else:
-                        tag_links.append(f"[`{t}`](/tags/{t})")
+                        tag_links.append(f'<a href="/tags/{t}" class="tag">{t}</a>')
+
 
                 tag_line = " ".join(tag_links)
                 f.write(f"{tag_line}\n\n")

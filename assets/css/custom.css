@@ -2,36 +2,41 @@
   text-align: justify;
 }
 
-/*
- * CSS Customizado para os Badges de Tag (COM SUPORTE A LIGHT/DARK MODE)
- */
-
-a:has(> code) {
-  /* Remove o sublinhado e a cor azul do link. */
-  text-decoration: none !important;
-  color: inherit !important;
-
-  /* Permite o efeito de "levantar" (translateY) */
+/* ======== ESTILO BASE (modo light) ======== */
+a.tag {
   display: inline-block;
-
-  /* Animação de "levantar" */
-  transition: transform 0.2s ease-in-out;
+  padding: 0.06rem 0.6rem;
+  margin: 0 0.25rem 0.25rem 0;
+  border-radius: 0.7rem;
+  font-size: 0.875rem;
+  font-family: monospace;
+  background-color: #f3f4f6;
+  color: #111827;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
 }
 
-/* 2. Efeito de "levantar" no hover */
-a:has(> code):hover {
-  /* Move o badge 2px para cima */
-  transform: translateY(-0.125rem);
+a.tag:hover {
+  background-color: #e5e7eb;
 }
 
-
-/* 5. Estilo do badge <code> ATIVO */
-/* * Seleciona <code> que é FILHO DIRETO de um <p>.
- * Isso SÓ vai pegar o badge ativo (pois os inativos
- * são filhos de <a>, não de <p>).
- */
-p > code {
+a.tag.active {
+  background-color: #2563eb !important;
+  color: #ffffff !important;
   font-weight: 600;
-  background-color: #3B82F6 !important;
-  color: #FFFFFF !important;
+}
+
+/* ======== DARK MODE ======== */
+html.dark a.tag {
+  background-color: #374151;
+  color: #f3f4f6;
+}
+
+html.dark a.tag:hover {
+  background-color: #4b5563;
+}
+
+html.dark a.tag.active {
+  background-color: #3b82f6 !important;
+  color: #ffffff !important;
 }
