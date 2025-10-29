@@ -4,21 +4,18 @@ date: 2025-10-27T07:29:14-0300
 tags: ["mqtt", "iot", "python", "pubsub", "protocolos", "tutorial"]
 ---
 
-O protocolo MQTT (Message Queuing Telemetry Transport), surgiu nos anos 90 com o objetivo de monitorar oleodutos via satélite. Essa demanda tinha como requisito **baixo consumo** de **banda** e de **bateria**.
+O protocolo MQTT (Message Queuing Telemetry Transport), surgiu nos anos 90 com o objetivo de monitorar oleodutos via satélite. Essa demanda tinha como requisito **baixo consumo** de **banda** e de **energia**, características que o tornaram ideal para seu uso popular em redes IoT (Internet das Coisas)
 
-Hoje existe um uso muito popular do protocolo MQTT em redes IoT (Internet das Coisas).
 Mas você sabe como este protocolo funciona? Para entender o fluxo precisamos de 3 componentes principais:
 ![Protocolo MQTT](https://bucket.jorgeleandro.com/blog/mqtt.svg)
 
 ### O Broker
 
-A base do MQTT é o uso de uma central de mensagens conhecida como Broker, que permite a aplicação do princípio de **Publicar/Inscrever-se** (Pub/Sub). Considere que o Broker é um centro de distribuição, onde cada dispositivo da rede vai se comunicar com ele e não diretamente entre si, como acontece no modelo de requisição/resposta (request/response).
-
-Exemplos populares de Brokers são o Mosquitto e o HiveMQ.
+A base do MQTT é o uso de uma central de mensagens conhecida como Broker, que permite a aplicação do princípio de **Publicar/Inscrever-se** (Pub/Sub). Considere que o Broker é um centro de distribuição, onde cada dispositivo da rede vai se comunicar com ele e não diretamente entre si, como acontece no modelo de requisição/resposta (request/response). Exemplos populares de Brokers são o Mosquitto e o HiveMQ.
 
 ### O Tópico
 
-É o "endereço" ou "assunto" da mensagem. A escolha do assunto é livre, mas um exemplo de sua aplicação seria `inversores/id_001/telemetria` para dados de potência elétrica de um inversor de frequeência de um sistema solar.
+É o "endereço" ou "assunto" da mensagem. A escolha do assunto é livre, mas um exemplo de sua aplicação seria `inversores/id_001/telemetria` para dados telemetria de um inversor solar.
 
 ### O Cliente
 
@@ -34,7 +31,7 @@ Para que você também possa testar, vou colocar um exemplo simulado, já que n�
 
 > 💾 O código completo está disponível no GitHub: [Exemplo MQTT](https://github.com/jorge-leandro/mqtt-example).
 
-Como já falamos de inversor de frequência, vamos supor que nosso inversor virtual envia os dados no seguinte formato:
+Como já mencionamos, vamos usar um inversor solar como exemplo. Vamos supor que nosso inversor virtual envia os dados no seguinte formato:
 
 ```json
 {
@@ -134,15 +131,14 @@ python subscriber.py
 
 Ele ficará aguardando mensagens.
 
-
 Observe o Terminal 2. Você verá os dados do inversor chegando em tempo real:
 
 ![Execução exemplo MQTT](https://bucket.jorgeleandro.com/blog/mqtt-exec.gif)
 
 ### Conclusão
 
-É simples assim. O publicador (inversor) não tem ideia de quem está ouvindo, e o inscrito (dashboard) não precisa saber onde o inversor está. Ambos confiam no Broker para gerenciar a comunicação.
+Eis o conceito do protocolo MQTT. O publicador (inversor) não tem ideia de quem está ouvindo, e o inscrito (dashboard) não precisa saber onde o inversor está. Ambos confiam no Broker para gerenciar a comunicação.
 
-Esse desacoplamento é o que torna o MQTT muito eficaz para sistemas de IoT, desde simples sensores em casa até frotas de veículos conectados e até mesmo aplicacões industriais.
+Esse desacoplamento é o que torna o MQTT muito eficaz para sistemas de IoT, desde simples sensores em casa até frotas de veículos conectados e até mesmo aplicações industriais.
 
 Quais outros casos de uso para o protocolo MQTT você imagina?
