@@ -10,7 +10,7 @@ author: "Jorge Leandro"
 O protocolo MQTT (Message Queuing Telemetry Transport), surgiu nos anos 90 com o objetivo de monitorar oleodutos via satélite. Essa demanda tinha como requisito **baixo consumo** de **banda** e de **energia**, características que o tornaram ideal para seu uso popular em redes IoT (Internet das Coisas)
 
 Mas você sabe como este protocolo funciona? Para entender o fluxo precisamos de 3 componentes principais:
-![Protocolo MQTT](https://bucket.jorgeleandro.com/blog/mqtt.svg)
+![Protocolo MQTT](https://bucket.jorgeleandro.com/blog/mqtt.png)
 
 ### O Broker
 
