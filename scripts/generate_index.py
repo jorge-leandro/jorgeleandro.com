@@ -125,7 +125,7 @@ def main():
 
                             if "title" in front and "date" in front:
                                 try:
-                                    date_obj = parse_date(str(front["date"]))
+                                    date_obj = parse_date(str(front["date"])).replace(tzinfo=None)
                                     url = full_path.replace(start_dir, "", 1).replace(
                                         "index.md", ""
                                     )
