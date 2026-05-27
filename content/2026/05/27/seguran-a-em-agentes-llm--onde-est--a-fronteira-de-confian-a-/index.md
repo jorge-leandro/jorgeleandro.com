@@ -406,5 +406,5 @@ Vale ser honesto sobre o que esse padrão resolve e o que não resolve. A remoç
 
 O que o proxy resolve independente da qualidade da inspeção é o posicionamento: existe agora um único ponto onde todo o tráfego entre sua aplicação e o provider pode ser observado, filtrado e registrado — inclusive o que vem de tool responses e nunca chegou pela borda externa. 
 
-Sem esse ponto central, qualquer mecanismo de inspeção futuro acaba espalhado em múltiplos lugares da aplicação, com risco constante de gaps e inconsistências.
+Em integrações LLM, segurança raramente falha por ausência de filtros. Ela falha quando o sistema não define claramente quem pode interpretar intenção, quem pode validar regras e quem realmente possui autoridade para executar ações.
 
