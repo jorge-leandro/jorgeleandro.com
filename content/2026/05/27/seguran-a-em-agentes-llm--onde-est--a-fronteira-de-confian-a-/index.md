@@ -104,7 +104,7 @@ Essa arquitetura não elimina todos os riscos discutidos antes, mas limita drast
 
 ### Os dois caminhos em código
 
-Para tornar a diferença mais concreta, comparar duas. O cenário: um banco quer permitir que o usuário envie um PIX via mensagem de texto — "manda 200 reais pro João" — numa interface tipo WhatsApp.
+Para tornar a diferença mais concreta, vamos comparar duas abordagens. O cenário: um banco quer permitir que o usuário envie um PIX via mensagem de texto — "manda 200 reais pro João" — numa interface tipo WhatsApp.
 
 **Abordagem 1 — o modelo com acesso direto, restrição só no prompt**
 
